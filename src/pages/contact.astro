@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '@config/site';
+---
+
+<BaseLayout title={`Contact | ${SITE.title}`} description={`Contact ${SITE.title}. Call or email for a quote. ${SITE.tagline}`}>
+  <section class="px-4 py-16 sm:px-6 sm:py-24">
+    <div class="container mx-auto max-w-2xl text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-[var(--color-text)] mb-4">Contact us</h1>
+      <p class="text-lg text-[var(--color-text-muted)] mb-10">
+        Call or email for a quote. We're happy to answer questions and schedule an on-site visit.
+      </p>
+      <div class="flex flex-col gap-6 sm:flex-row sm:justify-center">
+        <a
+          href={`tel:${SITE.phone.replace(/\D/g, '')}`}
+          class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white rounded-lg shadow-lg transition-all"
+          style="background-color: var(--color-primary);"
+        >
+          {SITE.phone}
+        </a>
+        <a
+          href={`mailto:${SITE.email}`}
+          class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-lg border-2 transition-all"
+          style="border-color: var(--color-primary); color: var(--color-primary);"
+        >
+          {SITE.email}
+        </a>
+      </div>
+      <p class="mt-10 text-[var(--color-text-muted)]">{SITE.tagline}</p>
+    </div>
+  </section>
+</BaseLayout>
