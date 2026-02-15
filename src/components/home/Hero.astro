@@ -1,20 +1,15 @@
 ---
-import { Image } from 'astro:assets';
 import { SITE } from '@config/site';
-import heroBgImg from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
 ---
 
 <section class="relative min-h-[600px] flex items-center overflow-hidden">
   <!-- Background Image with Overlay -->
   <div class="absolute inset-0">
-    <Image
-      src={heroBgImg}
+    <img
+      src="/computer-repair-hero.jpg"
       alt="Professional computer repair and tech support"
       class="w-full h-full object-cover"
-      width={2070}
-      height={1380}
-      decoding="async"
-      fetchpriority="high"
+      loading="eager"
     />
     <div class="absolute inset-0 bg-linear-to-r from-slate-900/95 via-slate-900/80 to-slate-900/50"></div>
   </div>
