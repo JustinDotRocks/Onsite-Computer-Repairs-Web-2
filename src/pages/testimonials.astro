@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TestimonialCard from '../components/ui/TestimonialCard.astro';
+import { SITE } from '@config/site';
+
+import testimonial1Img from '@assets/photo-1494790108377-be9c29b29330.jpg';
+import testimonial2Img from '@assets/photo-1507003211169-0a1dd7228f2d.jpg';
+import testimonial3Img from '@assets/photo-1438761681033-6461ffad8d80.jpg';
+
+const testimonials = [
+  {
+    quote: "They came to my office and had my computer running like new in under an hour. Professional, fast, and reasonably priced. I recommend them to everyone.",
+    name: "Sarah M.",
+    role: "Small business owner",
+    image: testimonial1Img,
+    ringColor: "ring-blue-200"
+  },
+  {
+    quote: "After a nasty virus, I thought I'd lost everything. They recovered my files and cleaned the system. So relieved—thank you!",
+    name: "Robert J.",
+    role: "Home user",
+    image: testimonial2Img,
+    ringColor: "ring-blue-200"
+  },
+  {
+    quote: "We use them for all our office PCs. On-site service means no downtime. They're reliable and know their stuff.",
+    name: "Emily W.",
+    role: "Office manager",
+    image: testimonial3Img,
+    ringColor: "ring-blue-200"
+  }
+];
+---
+
+<BaseLayout title={`Testimonials | ${SITE.title}`} description={`What our customers say about ${SITE.title}. Computer repair and on-site service.`}>
+  <section class="py-16 sm:py-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-[var(--color-text)] mb-4">What people say</h1>
+        <p class="text-xl text-[var(--color-text-muted)] max-w-2xl mx-auto">
+          Real feedback from people we've helped with computer repair and support.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {testimonials.map((testimonial) => (
+          <TestimonialCard testimonial={testimonial} variant="home" />
+        ))}
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="/contact" class="text-[var(--color-primary)] font-semibold hover:underline">
+          Get in touch →
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

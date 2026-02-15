@@ -1,12 +1,27 @@
 @import "tailwindcss";
 
+/* Onsite Computer Repairs brand colors */
+:root {
+  --color-primary: #0066b3;
+  --color-primary-bright: #007bff;
+  --color-navy: #003366;
+  --color-navy-dark: #002952;
+  --color-white: #ffffff;
+  --color-text: #1f2937;
+  --color-text-muted: #4b5563;
+  --color-grey-light: #e5e7eb;
+  --color-grey: #9ca3af;
+  --color-grey-dark: #4b5563;
+  --color-shadow: #1f2937;
+}
+
 /* Smooth scrolling */
 html {
   @apply scroll-smooth;
 }
 
 .nav-active {
-  @apply after:content-[""] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1.5 after:h-1.5 after:bg-blue-300 hover:after:bg-transparent after:rounded-full;
+  @apply after:content-[""] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1.5 after:h-1.5 after:bg-[var(--color-primary-bright)] hover:after:bg-transparent after:rounded-full;
 }
 
 /* Animations */
@@ -39,7 +54,7 @@ html {
 }
 
 .gradient-text {
-  background: linear-gradient(to right, #2563eb, #0d9488);
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-bright));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
